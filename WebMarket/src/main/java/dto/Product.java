@@ -14,7 +14,7 @@ public class Product implements Serializable{
 	private String description; // 상품 설명
 	private String manufacturer; // 제조사
 	private String category; // 분류
-	private long unisInstock; // 재고 수
+	private long unitsInstock; // 재고 수
 	private String condition; // 신상품 or 중고품 or 재생품
 	
 	//기본 생성자
@@ -77,12 +77,12 @@ public class Product implements Serializable{
 		this.category = category;
 	}
 
-	public long getUnisInstock() {
-		return unisInstock;
+	public long getUnitsInStock() {
+		return unitsInstock;
 	}
 
-	public void setUnisInstock(long unisInstock) {
-		this.unisInstock = unisInstock;
+	public void setUnitsInStock(long unisInstock) {
+		this.unitsInstock = unisInstock;
 	}
 
 	public String getCondition() {

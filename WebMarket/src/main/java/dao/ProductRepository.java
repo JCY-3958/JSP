@@ -5,6 +5,7 @@ import dto.Product;
 
 public class ProductRepository {
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
+	private static ProductRepository instance = new ProductRepository();
 	
 	public ProductRepository() {
 		Product phone = new Product("P1234", "iPhon 6s", 800000);
@@ -12,7 +13,7 @@ public class ProductRepository {
 				+ "8-megapixel iSight Camera");
 		phone.setCategory("Smart Phone");
 		phone.setManufacturer("Apple");
-		phone.setUnisInstock(1000);
+		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
 		
 		Product notebook = new Product("P1235", "LG PC 그램", 1500000);
@@ -20,7 +21,7 @@ public class ProductRepository {
 				+ "5rd Generation Intel Core processors");
 		notebook.setCategory("Notebook");
 		notebook.setManufacturer("LG");
-		notebook.setUnisInstock(1000);
+		notebook.setUnitsInStock(1000);
 		notebook.setCondition("Refurbished");
 		
 		Product tablet = new Product("P1236", "Galaxy Tab S", 900000);
@@ -28,7 +29,7 @@ public class ProductRepository {
 				+ "Octa-Core processor");
 		tablet.setCategory("Tablet");
 		tablet.setManufacturer("Samsung");
-		tablet.setUnisInstock(1000);
+		tablet.setUnitsInStock(1000);
 		tablet.setCondition("Old");
 		
 		listOfProducts.add(phone);
@@ -38,5 +39,28 @@ public class ProductRepository {
 	
 	public ArrayList<Product> getAllProducts() {
 		return listOfProducts;
+	}
+	
+	public Product getProductById(String productId) {
+		//productId가 같은 것만 productById에 담는다.
+		Product productById = null;
+		
+		for(int i = 0; i < listOfProducts.size(); i++) {
+			Product product = listOfProducts.get(i);
+			if(product != null && product.getProductId() != null &&
+					product.getProductId().equals(productId)) {
+				productById = product;
+				break;
+			}
+		}
+		return productById;
+	}
+	
+	public static ProductRepository getInstance() {
+		return instance;
+	}
+	
+	public void addProduct(Product product) {
+		listOfProducts.add(product);
 	}
 }
