@@ -7,8 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel = "stylesheet"
-	href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>도서 목록</title>
 </head>
@@ -30,6 +29,10 @@
 					Book book = listOfBooks.get(i);
 			%>
 			<div class="col-md-10">
+				<img src="/upload/<%=book.getFilename() %>" style="width:30%">
+				<!--  
+				<img src="./resources/images/<%=book.getFilename() %>" style="width:30%">
+				-->
 				<p><h5><b>[<%=book.getCategory()%>]<%=book.getName()%></b></h5>
 				<p style="padding-top:20px"><%=book.getDescription()%></p>
 				

@@ -5,8 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel = "stylesheet"
-	href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "./resources/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
 </head>
@@ -24,6 +23,12 @@
 	%>
 	<div class="container">
 		<div class="row">
+			<div class="col-md-5">
+				<img src="/upload/<%=book.getFilename() %>" style="width:70%">
+				<!--  
+				<img src="./resources/images/<%=book.getFilename() %>" style="width:70%">
+				-->
+			</div>
 			<div class="col-md-12">
 				<p><h5><b>[<%=book.getCategory()%>]<%=book.getName()%></b></h5>
 				<p style="padding-top:20px"><%=book.getDescription() %></p>

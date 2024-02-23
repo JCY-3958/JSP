@@ -24,6 +24,7 @@ public class BookRepository {
 	      book1.setUnitsInStock(1000);
 	      book1.setTotalPages(288);
 	      book1.setReleaseDate("2018/03/02");
+	      book1.setFilename("괴물쥐.jpg");
 	      
 	      Book book2 = new Book("ISBN1235","쉽게 배우는 자바 프로그래밍", 27000);
 	      book2.setAuthor("우종중");
@@ -33,6 +34,7 @@ public class BookRepository {
 	      book2.setUnitsInStock(1000);
 	      book2.setTotalPages(692);
 	      book2.setReleaseDate("2017/08/02");
+	      book2.setFilename("핑핑이.jpg");
 	      
 	      Book book3= new Book("ISBN1236","스프링4 입문 ", 27000);
 	      book3.setAuthor("하세가와 유이치 , 오오노 와타루 , 토키 코헤이(권은철 , 전민수 ) ");
@@ -42,6 +44,7 @@ public class BookRepository {
 	      book3.setUnitsInStock(1000);
 	      book3.setTotalPages(520);
 	      book3.setReleaseDate("2017/11/01");
+	      book3.setFilename("맥심.jpg");
 	      
 	      listOfBooks.add(book1);
 	      listOfBooks.add(book2);
