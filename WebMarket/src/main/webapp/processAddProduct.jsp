@@ -15,8 +15,8 @@
 	<%
 		request.setCharacterEncoding("utf-8");
 	
-		String filename = "";
-		String realFolder = "C:\\JSP_WORK\\WebMarket\\src\\main\\webapp\\resources\\images";
+		String filename = ""; // 얘 없어도 잘만 돌아감 왜 있는거임???
+		String realFolder = "c:\\upload";
 		int maxSize = 5 * 1024 * 1024;
 		String encType = "utf-8";
 		
