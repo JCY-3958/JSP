@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
+<!-- 지금 안댐
+	<filter>
+		<filter-name>Filter01</filter-name>
+		<filter-class>ch12.com.filter.AuthenFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Filter01</filter-name>
+		<url-pattern>/ch12/filter01_process.jsp</url-pattern>
+	</filter-mapping>
+	 -->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ch11/errorCode_error.jsp</location>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/ch11/exceptionType_error.jsp</location>
+	</error-page>
 	<security-role>
 		<role-name>role1</role-name>
 	</security-role>
