@@ -10,6 +10,15 @@
 <link rel = "stylesheet" href = "./resources/css/bootstrap.min.css"/>
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
+<script type="text/javascript">
+	function addToCart() {
+		if(confirm("상품을 장바구니에 추가하시겠습니까?")) {
+			document.addForm.submit();
+		} else {
+			document.addForm.reset();
+		}
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="menu.jsp"/>
@@ -37,9 +46,12 @@
 				<p><b>분류</b> : <%=product.getCategory() %></p>
 				<p><b>재고 수</b> : <%=product.getUnitsInStock() %></p>
 				<h4><%=product.getUnitPrice() %>원</h4>
-				<p><a href="http://www.google.com" class="btn btn-info">상품 주문 &raquo;</a>
-				   <a href="./products.jsp" class="btn btn-secondary">상품 목록 &raquo;</a>
-				</p>
+				<p> <form name="addForm" action="./addCart.jsp?id=<%=product.getProductId() %>"
+					method="post">
+					<a href="#" class="btn btn-info" onclick="addToCart()">상품 주문 &raquo;</a>
+					<a href="./cart.jsp" class="btn btn-warning">장바구니 &raquo;</a>
+					<a href="./products.jsp" class="btn btn-secondary">상품 목록 &raquo;</a>
+				</form>
 			</div>
 		</div>
 		<hr>
