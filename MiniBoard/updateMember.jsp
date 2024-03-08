@@ -1,3 +1,4 @@
+<!-- 로그인 시 회원 정보를 수정하는 페이지 -->
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
