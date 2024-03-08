@@ -7,7 +7,14 @@
 
 <%
 	String sessionId = (String) session.getAttribute("sessionId");
+
+	//boardcontroller에서 넘어온 값들을 받아준다.
 	List boardList = (List) request.getAttribute("boardlist");
+	
+	//intValue를 쓴 이유는 Integer 객체 타입 안에 기본 타입인 int 값을 뽑아 내기 위해 사용
+	//request.getAttribute는 Object 타입으로 반환하기 때문에
+	//Integer 객체로 변환하여 주고 원시 int 타입의 값을 얻기 위해 사용
+	//이를 박싱, 언박싱이라고 하는데 java 5부터는 오토박싱, 언박싱 지원. 이렇게 명시적으로 적어주는 것도 상관없음
 	int total_record = ((Integer) request.getAttribute("total_record")).intValue();
 	int pageNum = ((Integer) request.getAttribute("pageNum")).intValue();
 	int total_page = ((Integer) request.getAttribute("total_page")).intValue();
@@ -67,6 +74,22 @@
 						}
 					%>
 				</table>
+			</div>
+			<div align="center">
+				<c:set var="pageNum" value="<%=pageNum%>" />
+				<c:forEach var="i" begin="1" end="<%=total_page%>">
+					<a href="<c:url value="./BoardListAction.do?pageNum=${i}" /> ">
+						<c:choose>
+							<c:when test="${pageNum==i}">
+								<font color='4C5317'><b> [${i}]</b></font>
+							</c:when>
+							<c:otherwise>
+								<font color='4C5317'> [${i}]</font>
+
+							</c:otherwise>
+						</c:choose>
+					</a>
+				</c:forEach>
 			</div>
 			<div align="left">
 				<table>
