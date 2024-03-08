@@ -1,3 +1,4 @@
+<!-- 회원 정보 수정할 때 회원 탈퇴 버튼 클릭 시 실행 -->
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
