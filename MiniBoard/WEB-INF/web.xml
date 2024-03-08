@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+	<!-- 서블릿 클래스 등록 -->
+		<servlet-name>BoardController</servlet-name>
+		<servlet-class>mvc.controller.BoardController</servlet-class>
+	</servlet>
+	<!-- 웹 브라우저에서 요청되는 URL과 위에 있는 서블릿 클래스 매핑
+		.do로 끝나는 모든(*) URL 요청이 오면 위의 클래스 실행 -->
+	<servlet-mapping>
+		<servlet-name>BoardController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+</web-app>
